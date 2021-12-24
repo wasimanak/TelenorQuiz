@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="@dimen/_80sdp"
+    android:background="@drawable/headerround"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telenor Quiz App"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/_18ssp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/customfonts"
+        android:id="@+id/appname"
+        />
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="05/01/2021"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/_12ssp"
+
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:letterSpacing="0.2"
+        android:fontFamily="@font/regularf"
+        android:layout_below="@id/appname"
+
+        />
+
+</RelativeLayout>

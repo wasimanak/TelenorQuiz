@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Skills Test</string>
+    <string name="interstitial_ad_unit" translatable="false">ca-app-pub-3965423821168889/7118345376</string>
+    <string name="banner_ad_unit" translatable="false">ca-app-pub-3965423821168889/8650918898</string>
+    <string name="admob_app_id" translatable="false">ca-app-pub-3965423821168889~4903245574<!--ca-app-pub-3940256099942544~3347511713--></string>
+    <string name="share_text">Get chance to win up to 200MBs from my Telenor App. Try it now:</string>
+    <string name="app_description">Get Chance to win upto 200MBs Data</string>
+    <string name="footer">Developed By: PKsofter</string>
+
+</resources>

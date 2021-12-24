@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pk Quiz</string>
+    <string name="interstitial_ad_unit" translatable="false">ca-app-pub-2024884640260057/2152456516</string>
+    <string name="banner_ad_unit_id">ca-app-pub-2024884640260057/5161763237</string>
+    <string name="admob_app_id" translatable="false">ca-app-pub-2024884640260057~6059718415</string>
+    <string name="share_text">Get chance to win up to 2GBs from my Telenor App. Try it now:</string>
+    <string name="app_description">Get Chance to win upto 2GBs Data</string>
+    <string name="footer">Developed By: Manak Publisher</string>
+    <string name="termsconditionslink">https://pksofter.blogspot.com/p/khandani-shifakhana-terms-and-condtions.html</string>
+    <string name="exit_alert">Press back again to exit</string>
+
+</resources>

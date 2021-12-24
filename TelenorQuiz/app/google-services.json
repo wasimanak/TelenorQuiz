@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "482684376191",
+    "project_id": "telenor-quiz-6adc1",
+    "storage_bucket": "telenor-quiz-6adc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482684376191:android:9bdd7b4fecd178f6e15b4a",
+        "android_client_info": {
+          "package_name": "com.pksofterskillstest.MCQs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482684376191-bfcj8e2c9ei937uesj5qkaj68ffjhrpg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV4X0GFGP-VLoC-0ncZTmq4OrjYxWq7HQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482684376191-bfcj8e2c9ei937uesj5qkaj68ffjhrpg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
