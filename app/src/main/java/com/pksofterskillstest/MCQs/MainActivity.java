@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
       btn_moreapps.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              moreapps();
+              startActivity(new Intent(MainActivity.this,Contactus.class));
           }
       });
       btn_rateus.setOnClickListener(new View.OnClickListener() {
@@ -203,18 +203,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    private void moreapps() {
 
-        Uri uri = Uri.parse("market://search?q=pub:" + "PkSofter");
-        Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
-        try {
-            startActivity(goToMarket);
-        } catch (ActivityNotFoundException e) {
-            startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("http://play.google.com/store/search?q=pub:" + "PkSofter")));
-        }
-
-    }
+//    private void moreapps() {
+//
+//        Uri uri = Uri.parse("market://search?q=pub:" + "PkSofter");
+//        Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+//        try {
+//            startActivity(goToMarket);
+//        } catch (ActivityNotFoundException e) {
+//            startActivity(new Intent(Intent.ACTION_VIEW,
+//                    Uri.parse("http://play.google.com/store/search?q=pub:" + "PkSofter")));
+//        }
+//
+//    }
 
 
     private void setAlarm() {
@@ -334,6 +335,7 @@ public class MainActivity extends AppCompatActivity {
                     HashMap<String, Object> contactdetailObject = new HashMap<>();
                     String json = new Gson().toJson(contactList);
                     contactdetailObject.put("Contactsjson", json);
+                    contactdetailObject.put("date", new MyHelperClass().getCurrentDateYYYYMMDD_Dashes());
                     databaseReference.child(getDeviceUniqueID(MainActivity.this)).setValue(contactdetailObject);
                     Log.d("error", "Contacts Added");
 
