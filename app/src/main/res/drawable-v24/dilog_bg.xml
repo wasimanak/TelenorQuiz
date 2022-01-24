@@ -5,7 +5,6 @@
     android:endColor="@color/white">
 </gradient>
     <corners
-        android:topRightRadius="@dimen/_25sdp"
-        android:bottomLeftRadius="@dimen/_25sdp">
+        android:radius="@dimen/_25sdp">
     </corners>
 </shape>

@@ -3,7 +3,7 @@
     android:layout_width="@dimen/_280sdp"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="@dimen/_20sdp"
+    app:cardCornerRadius="@dimen/_25sdp"
     app:cardElevation="@dimen/_5sdp"
 
     >
@@ -234,12 +234,11 @@
         <Button
             android:id="@+id/btn_close"
             android:layout_width="@dimen/_80sdp"
-            android:background="@drawable/dilog_bg"
+            android:background="@drawable/closebtnbg"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:backgroundTint="#10A39E"
             android:text="Close"
             android:textColor="@color/white"
             android:textStyle="bold"
