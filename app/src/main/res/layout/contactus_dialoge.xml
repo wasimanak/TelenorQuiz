@@ -234,11 +234,12 @@
         <Button
             android:id="@+id/btn_close"
             android:layout_width="@dimen/_80sdp"
+            android:background="@drawable/dilog_bg"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:backgroundTint="#003C3A"
+            android:backgroundTint="#10A39E"
             android:text="Close"
             android:textColor="@color/white"
             android:textStyle="bold"
