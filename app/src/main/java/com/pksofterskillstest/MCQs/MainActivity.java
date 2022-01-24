@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
@@ -22,6 +23,7 @@ import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -45,6 +47,7 @@ import com.gun0912.tedpermission.TedPermission;
 import com.kaopiz.kprogresshud.KProgressHUD;
 import com.pksofterskillstest.MCQs.model.ContactsModel;
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
       btn_moreapps.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              startActivity(new Intent(MainActivity.this,Contactus.class));
+              showDialog();
           }
       });
       btn_rateus.setOnClickListener(new View.OnClickListener() {
@@ -122,7 +125,96 @@ public class MainActivity extends AppCompatActivity {
 
         getDataFromDB();
     }
+    public void showDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.contactus_dialoge);
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.dilog_bg);
+        ImageView iv_call,iv_facebook,iv_google,iv_youtube;
 
+        dialog.show();
+
+        Button btn_close = dialog.findViewById(R.id.btn_close);
+        btn_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+
+        });
+        iv_call=dialog.findViewById(R.id.iv_call);
+        iv_facebook=dialog.findViewById(R.id.iv_facebook);
+        iv_google=dialog.findViewById(R.id.iv_google);
+        iv_youtube=dialog.findViewById(R.id.iv_youtube);
+
+        iv_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String defultapp = "WhatsApp";
+
+                try {
+                    String url = "https://api.whatsapp.com/send?phone=+923012861054" +
+                            "&text=" + URLEncoder.encode("HELLO Kalma App TEAM !  ", "UTF-8");
+
+                    Intent sendIntent = new Intent("android.intent.action.MAIN");
+                    sendIntent.setAction(Intent.ACTION_VIEW);
+
+                    if (defultapp.equalsIgnoreCase("WhatsApp")) {
+                        sendIntent.setPackage("com.whatsapp");
+                        Log.e("message", "WhatsApp");
+                    }
+                    sendIntent.setData(Uri.parse(url));
+                    startActivity(sendIntent);
+
+                } catch (Exception e) {
+                    Log.e("message", e.getMessage());
+                }
+            }
+        });
+        iv_google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("mailto:"+"wasimanak@gmail.com"));
+//                intent.putExtra(Intent.EXTRA_SUBJECT, "KSK User");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "KSK USER");
+                intent.putExtra(Intent.EXTRA_EMAIL, "\nThis email from Kalma App USER");
+
+                startActivity(intent);
+
+
+
+
+
+            }
+        });
+        iv_youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=null;
+                String url="https://www.youtube.com/c/WasiManak";
+                try {
+                    intent =new Intent(Intent.ACTION_VIEW);
+                    intent.setPackage("com.google.android.youtube");
+                    intent.setData(Uri.parse(url));
+                    startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(url));
+                    startActivity(intent);
+                }
+            }
+        });
+        iv_facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String YourPageURL = "https://www.facebook.com/CEdiscoveries";
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(YourPageURL));
+
+                startActivity(browserIntent);
+            }
+        });
+
+    }
 
     private void initView() {
         ConnectivityManager conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -247,7 +339,6 @@ public class MainActivity extends AppCompatActivity {
                 .setBackgroundColor(getResources().getColor(R.color.kprogresshud_default_color))
                 .setDimAmount(0.5f);
     }
-
 
 
     private static class AdController {
