@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
     public void getDataFromDB(){
         kProgressHUD.show();
         questionsmodelList=new ArrayList<>();
-        databaseReference= FirebaseDatabase.getInstance().getReference("questions");
+        databaseReference= FirebaseDatabase.getInstance().getReference("Categories").child("Poetry");
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -250,8 +250,8 @@ public class MainActivity extends AppCompatActivity {
 
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         questionsmodelList.add(new questionsmodel(
-                                dataSnapshot.child("question").getValue(String.class),
-                                dataSnapshot.child("correctans").getValue(String.class)
+                                dataSnapshot.child("poetry").getValue(String.class),
+                                dataSnapshot.child("poetry").getValue(String.class)
                         ));
                     }
                     checkAddsDB();
