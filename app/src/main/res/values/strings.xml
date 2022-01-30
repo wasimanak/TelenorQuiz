@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pk Quiz</string>
+    <string name="app_name">Pk Poetry</string>
     <string name="interstitial_ad_unit" translatable="false">ca-app-pub-2024884640260057/2152456516</string>
     <string name="banner_ad_unit_id">ca-app-pub-2024884640260057/5161763237</string>
     <string name="admob_app_id" translatable="false">ca-app-pub-2024884640260057~6059718415</string>

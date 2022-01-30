@@ -40,7 +40,7 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.tv_questionnumber.setText("poetry#"+(position+1));
+        holder.tv_questionnumber.setText("Poetry#"+(position+1));
         holder.tv_question.setText(questionsmodelList.get(position).getQuestion());
         holder.tv_answer.setOnClickListener(new View.OnClickListener() {
             @Override
