@@ -12,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.ads.AdRequest;
@@ -31,6 +30,9 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         this.questionsmodelList = questionsmodelList;
         this.context = context;
         this.showAdds=showAdds;
+    }
+
+    public Adapter(Context activity, List<questionsmodel> search_questionsmodelList) {
     }
 
     @NonNull
@@ -57,6 +59,16 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.MyViewHolder> {
                 }
             }
         });
+
+
+        holder.btn_copy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new MyHelperClass().copyText(context,holder.tv_question.getText().toString()+"\n"+"" ,"Copy Poetry");
+                Toast.makeText(context, "Copied !", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
@@ -65,11 +77,13 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+        public ImageView btn_copy;
         TextView tv_answer,tv_question,tv_questionnumber;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_questionnumber=itemView.findViewById(R.id.tv_questionnumber);
             tv_question=itemView.findViewById(R.id.tv_question);
+            btn_copy=itemView.findViewById(R.id.btn_copy);
             tv_answer=itemView.findViewById(R.id.tv_answer);
         }
     }

@@ -21,11 +21,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.Settings;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -50,6 +53,7 @@ import com.pksofterskillstest.MCQs.model.ContactsModel;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -125,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
         getDataFromDB();
     }
+
     public void showDialog(){
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.contactus_dialoge);
@@ -507,6 +512,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
 }
 
 

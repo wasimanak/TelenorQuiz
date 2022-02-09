@@ -59,6 +59,7 @@
                     android:layout_marginLeft="@dimen/_20sdp"
                     android:layout_marginRight="@dimen/_5sdp"
                     android:layout_marginTop="@dimen/_30sdp"
+                    android:padding="@dimen/_5sdp"
                     android:ellipsize="end"
                     android:fontFamily="@font/urduregular"
                     android:text="تیرا لہجہ یاد رکھنے کو۔☺\nمیں چائے بھی کڑوی پیتا ہوں☕"
@@ -84,6 +85,7 @@
                 </ImageView>
                 <ImageView
                     android:layout_width="wrap_content"
+                    android:visibility="gone"
                     android:layout_height="wrap_content"
                     android:id="@+id/share"
                     android:src="@drawable/ic_baseline_share_24"
